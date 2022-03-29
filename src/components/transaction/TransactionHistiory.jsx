@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types';
 import React from "react";
 
 export const TransactionHistory = ({ items }) => {
     return (
-        <table class="transaction-history">
+        <table className="transaction-history">
   <thead>
     <tr>
       <th>Type</th>
@@ -22,4 +23,11 @@ export const TransactionHistory = ({ items }) => {
   </tbody>
 </table>
     )
+};
+
+
+// ? PropTypes
+
+TransactionHistory.propTypes = {
+  items: PropTypes.array.isRequired,
 };

@@ -6,7 +6,7 @@ export const FriendList = () => {
     return (
         <ul className="friend-list">
             {friends.map(elem =>
-                <FriendListItem
+                <FriendListItem key={elem.id}
                     avatar={elem.avatar}
                     name={elem.name}
                     isOnline={elem.isOnline} />
@@ -14,3 +14,5 @@ export const FriendList = () => {
         </ul>
     )
 };
+
+// ? key обязательно добавлять после map

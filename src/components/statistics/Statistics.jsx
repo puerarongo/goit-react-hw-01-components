@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from "react";
 
 export const Statistics = ({ title, stats }) => {
@@ -16,6 +17,13 @@ export const Statistics = ({ title, stats }) => {
             </ul>
         </section>
     )
+};
+
+// ? PropTypes
+
+Statistics.propTypes = {
+    title: PropTypes.string,
+    stats: PropTypes.array.isRequired,
 };
 
 
