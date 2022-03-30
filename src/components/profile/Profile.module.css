@@ -1,8 +1,7 @@
 .container {
   display: inline-block;
-  margin: 30px 0;
+  margin: 50px 0;
   text-align: center;
-  margin-bottom: 50px;
   border: 1px solid rgba(12, 12, 12, 30%);
 }
 
