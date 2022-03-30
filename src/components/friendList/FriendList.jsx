@@ -1,10 +1,11 @@
 import React from "react";
 import { FriendListItem } from "components/friendListItem/FriendListItem";
 import friends from "../../dataFiles/friends.json";
+import styles from "./FriendList.module.css";
 
 export const FriendList = () => {
     return (
-        <ul className="friend-list">
+        <ul className={styles.container}>
             {friends.map(elem =>
                 <FriendListItem key={elem.id}
                     avatar={elem.avatar}
