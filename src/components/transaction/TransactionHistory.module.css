@@ -1,0 +1,32 @@
+.table {
+  display: inline-block;
+  border-collapse: collapse;
+  margin-bottom: 50px;
+  border: 1px solid rgba(204, 204, 204, 0.1);
+}
+
+.table__head {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 400;
+  background-color: rgb(7, 174, 216);
+  color: rgb(239, 247, 255);
+}
+
+.table__body {
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.line {
+  border: 1px solid rgba(204, 204, 204, 0.1);
+}
+
+.line:nth-child(2n) {
+  background-color: rgba(209, 237, 245, 0.9);
+}
+
+.cell {
+  padding: 20px 150px;
+}
