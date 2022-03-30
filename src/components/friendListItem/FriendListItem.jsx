@@ -5,7 +5,9 @@ import styles from "./FriendListItem.module.css";
 export const FriendListItem = ({avatar, name, isOnline }) => {
     return (
         <li className={styles.list__item}>
-            <span className={styles.list__status}>{isOnline}</span>
+            {isOnline ? (
+                <span className={styles.status__on}></span>) :
+                (<span className={styles.status__off}></span>)}
             <img className={styles.list__avatar} src={avatar} alt={name} width="48" />
             <p className={styles.list__name}>{name}</p>
         </li>

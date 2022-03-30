@@ -13,13 +13,18 @@
   margin-bottom: 20px;
 }
 
-.list__status {
+.status__on,
+.status__off {
   margin-right: 10px;
 
   width: 15px;
   height: 15px;
   border-radius: 50%;
   background-color: rgb(18, 240, 18);
+}
+
+.status__off {
+  background-color: rgb(245, 41, 5);
 }
 
 .list__avatar {
