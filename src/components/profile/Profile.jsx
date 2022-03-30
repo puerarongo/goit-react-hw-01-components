@@ -1,32 +1,33 @@
 import PropTypes from 'prop-types';
 import React from "react";
+import styles from "./Profile.module.css";
 
 export const Profile = ({ username, tag, location, avatar, stats}) => {
     return (
-        <div className="profile">
-            <div className="description">
+        <div className={styles.container}>
+            <div className={styles.profile__description}>
                 <img
                     src={avatar}
                     alt="User avatar"
-                    className="avatar"
+                    className={styles.profile__image}
                 />
-                <p className="name">{username}</p>
-                <p className="tag">{tag}</p>
-                <p className="location">{location}</p>
+                <p className={styles.profile__name}>{username}</p>
+                <p className={styles.profile__text}>{tag}</p>
+                <p className={styles.profile__text}>{location}</p>
             </div>
 
-            <ul className="stats">
-                <li>
-                    <span className="label">Followers</span>
-                    <span className="quantity">{stats.followers}</span>
+            <ul className={styles.profile__list}>
+                <li className={styles.list__item}>
+                    <span className={styles.stats__name}>Followers</span>
+                    <span className={styles.stats__value}> {stats.followers}</span>
                 </li>
-                <li>
-                    <span className="label">Views</span>
-                    <span className="quantity">{stats.views}</span>
+                <li className={styles.list__item}>
+                    <span className={styles.stats__name}>Views</span>
+                    <span className={styles.stats__value}>{stats.views}</span>
                 </li>
-                <li>
-                    <span className="label">Likes</span>
-                    <span className="quantity">{stats.likes}</span>
+                <li className={styles.list__item}>
+                    <span className={styles.stats__name}>Likes</span>
+                    <span className={styles.stats__value}>{stats.likes}</span>
                 </li>
             </ul>
         </div>
