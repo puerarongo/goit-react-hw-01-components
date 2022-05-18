@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 import React from "react";
 import styles from "./Profile.module.css";
 
-export const Profile = ({ username, tag, location, avatar, stats}) => {
+export const Profile = ({ username, tag, location, avatar, stats }) => {
+    const { followers, views, likes } = stats;
     return (
         <div className={styles.container}>
             <div className={styles.profile__description}>
@@ -19,15 +20,15 @@ export const Profile = ({ username, tag, location, avatar, stats}) => {
             <ul className={styles.profile__list}>
                 <li className={styles.list__item}>
                     <span className={styles.stats__name}>Followers</span>
-                    <span className={styles.stats__value}> {stats.followers}</span>
+                    <span className={styles.stats__value}> {followers}</span>
                 </li>
                 <li className={styles.list__item}>
                     <span className={styles.stats__name}>Views</span>
-                    <span className={styles.stats__value}>{stats.views}</span>
+                    <span className={styles.stats__value}>{views}</span>
                 </li>
                 <li className={styles.list__item}>
                     <span className={styles.stats__name}>Likes</span>
-                    <span className={styles.stats__value}>{stats.likes}</span>
+                    <span className={styles.stats__value}>{likes}</span>
                 </li>
             </ul>
         </div>
@@ -42,5 +43,9 @@ Profile.propTypes = {
     tag: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
     avatar: PropTypes.string.isRequired,
-    stats: PropTypes.object
+    stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired
+    })
 };

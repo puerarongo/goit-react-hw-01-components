@@ -6,9 +6,9 @@ import { TransactionHistory } from "./transaction/TransactionHistiory";
 
 // todo Data Files
 import user from "../dataFiles/user.json";
+import friends from "../dataFiles/friends.json";
 import data from "../dataFiles/data.json";
 import transactions from "../dataFiles/transactions.json";
-
 
 export const App = () => {
   return (
@@ -26,7 +26,7 @@ export const App = () => {
       <Statistics title="Upload stats" stats={data} />
 
       <div>
-        <FriendList />
+        <FriendList friends={friends} />
       </div>
 
       <TransactionHistory items={transactions}/>

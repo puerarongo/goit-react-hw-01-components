@@ -14,11 +14,11 @@ export const TransactionHistory = ({ items }) => {
   </thead>
 
     <tbody className={styles.table__body}>
-        {items.map(elem =>
-            <tr key={elem.id} className={styles.line}>
-                <td className={styles.cell}>{elem.type}</td>
-                <td className={styles.cell}>{elem.amount}</td>
-                <td className={styles.cell}>{elem.currency}</td>
+        {items.map(({id, type, amount, currency}) =>
+            <tr key={id} className={styles.line}>
+                <td className={styles.cell}>{type}</td>
+                <td className={styles.cell}>{amount}</td>
+                <td className={styles.cell}>{currency}</td>
             </tr>
         )}        
   </tbody>
@@ -30,5 +30,12 @@ export const TransactionHistory = ({ items }) => {
 // ? PropTypes
 
 TransactionHistory.propTypes = {
-  items: PropTypes.array.isRequired,
+  items: PropTypes.arrayOf(
+      PropTypes.exact({
+        id: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+        amount: PropTypes.string.isRequired,
+        currency: PropTypes.string.isRequired
+      })
+    ).isRequired
 };

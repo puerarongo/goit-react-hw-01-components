@@ -11,10 +11,10 @@ export const Statistics = ({ title, stats }) => {
                 <h2 className={styles.title}>{title}</h2>
             )}
             <ul className={styles.list}>
-                {stats.map(elem =>
-                    <li key={elem.id} className={styles.list__item} style={{ backgroundColor: getRandomHexColor() }}>
-                        <span className={styles.stats__label}>{elem.label}</span>
-                        <span className={styles.stats__value}>{elem.percentage}%</span>
+                {stats.map(({id, label, percentage}) =>
+                    <li key={id} className={styles.list__item} style={{ backgroundColor: getRandomHexColor() }}>
+                        <span className={styles.stats__label}>{label}</span>
+                        <span className={styles.stats__value}>{percentage}%</span>
                     </li>
                 )}
             </ul>
@@ -26,7 +26,12 @@ export const Statistics = ({ title, stats }) => {
 
 Statistics.propTypes = {
     title: PropTypes.string,
-    stats: PropTypes.array.isRequired,
+    stats: PropTypes.arrayOf(
+        PropTypes.exact({
+            id: PropTypes.string.isRequired,
+            label: PropTypes.string.isRequired,
+            percentage: PropTypes.number.isRequired
+        }).isRequired)
 };
 
 
