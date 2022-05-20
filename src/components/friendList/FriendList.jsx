@@ -19,7 +19,6 @@ export const FriendList = ({ friends }) => {
 };
 
 // ? key обязательно добавлять после map
-
 FriendList.propTypes = {
   friends: PropTypes.arrayOf(
     PropTypes.exact({
